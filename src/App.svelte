@@ -4,10 +4,7 @@
 
 <main>
     <form on:submit|preventDefault={() => newNote()}>
-        <input type="text" placeholder="Enter todo here" name="todo">
-    </form>
-    <form action="#" onsubmit="newNote()">
-        <input type="text" placeholder="Add a note">
+        <input type="text" placeholder="Add a note" name="note">
     </form>
 </main>
 
