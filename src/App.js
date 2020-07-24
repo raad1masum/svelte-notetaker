@@ -1,1 +1,3 @@
-console.log("hello world")
+function newNote() {
+    console.log("new note");
+}
