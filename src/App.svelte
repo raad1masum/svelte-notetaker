@@ -1,4 +1,5 @@
 <script>
+    import './App.js'
     export let name;
 </script>
 
