@@ -7,7 +7,7 @@
         <div class="control">
             <input class="input" type="text" placeholder="add note" /><br>
             {#each notes as note, i}
-                <input bind:value="{note}" on:change={() => onNoteChange(i)} class="input" type="text" placeholder="add note" /><br>
+                <input id="input" bind:value="{note}" on:change={() => onNoteChange(i)} on:keydown="{() => removeNote(i)}" class="input" type="text" placeholder="add note" /><br>
             {/each}
             <input style="display: none" type="submit" value="Add">
         </div>
@@ -44,6 +44,16 @@
     function newNote() {
         notes = notes.concat("");
         console.log("worked")
+    }
+
+    function removeNote(index) {
+        var key = event.keyCode || event.charCode;
+        console.log(notes[index].length)
+
+        if( key == 8 || key == 46 && notes[index].length == 0) {
+            delete notes[index];
+            console.log("worked2")
+        }
     }
 
     function onNoteChange(index) {
