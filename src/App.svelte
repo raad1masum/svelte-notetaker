@@ -4,7 +4,7 @@
 </script>
 
 <main>
-    <form onsubmit="myFunction()">
+    <form onsubmit="newNote()">
         <input type="text" placeholder="Add a note">
     </form>
 </main>
