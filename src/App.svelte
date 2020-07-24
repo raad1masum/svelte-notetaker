@@ -3,11 +3,7 @@
 </script>
 
 <main>
-    <div id="notes-div">
-        <form on:submit|preventDefault={() => newNote()}>
-            <input type="text" placeholder="Add a note">
-        </form>
-    </div>
+    <div style="color: inherit; fill: inherit;"><div style="display: flex;"><div contenteditable="true" spellcheck="true" placeholder="Type '/' for commands" data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;"></div></div></div>
 </main>
 
 <style>
