@@ -1,10 +1,12 @@
 <script>
-    import './App.js'
-    export let name;
+    import { newNote } from './App.js'
 </script>
 
 <main>
-    <form onsubmit="newNote()">
+    <form on:submit|preventDefault={() => newNote()}>
+        <input type="text" placeholder="Enter todo here" name="todo">
+    </form>
+    <form action="#" onsubmit="newNote()">
         <input type="text" placeholder="Add a note">
     </form>
 </main>
