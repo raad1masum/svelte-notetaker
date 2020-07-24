@@ -3,9 +3,11 @@
 </script>
 
 <main>
-    <form on:submit|preventDefault={() => newNote()}>
-        <input type="text" placeholder="Add a note">
-    </form>
+    <div id="notes-div">
+        <form on:submit|preventDefault={() => newNote()}>
+            <input type="text" placeholder="Add a note">
+        </form>
+    </div>
 </main>
 
 <style>
