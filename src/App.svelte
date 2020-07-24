@@ -1,12 +1,17 @@
-<script>
-    import { newNote } from './App.js'
-</script>
-
 <main>
-    <div class="note-container">
-        <div style="color: inherit; fill: inherit;"><div style="display: flex;"><div contenteditable="true" spellcheck="true" placeholder="Type '/' for commands" data-root="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;"></div></div></div>
-    </div>
-    <button type="button" on:click={newNote}>add note</button>
+    <form
+        class="field has-addons"
+        style="justify-content: center"
+        on:submit|preventDefault="{newNote}"
+        >
+        <div class="control">
+            <input class="input" type="text" placeholder="add note" /><br>
+            {#each notes as note, i}
+                <input bind:value="{note}" on:change={() => onNoteChange(i)} class="input" type="text" placeholder="add note" /><br>
+            {/each}
+            <input style="display: none" type="submit" value="Add">
+        </div>
+    </form>
 </main>
 
 <style>
@@ -30,3 +35,18 @@
         }
     }
 </style>
+
+<script>
+    export let notes = []
+
+    var container = document.getElementById("control");
+
+    function newNote() {
+        notes = notes.concat("");
+        console.log("worked")
+    }
+
+    function onNoteChange(index) {
+        notes[index] = event.target.value
+    }
+</script>

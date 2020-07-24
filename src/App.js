@@ -1,5 +1,2 @@
-function newNote() {
-    console.log("new note");
-}
 
-export { newNote }
+export { newNote, onNoteChange }
