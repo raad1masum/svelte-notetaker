@@ -4,7 +4,7 @@
 
 <main>
     <form on:submit|preventDefault={() => newNote()}>
-        <input type="text" placeholder="Add a note" name="note">
+        <input type="text" placeholder="Add a note">
     </form>
 </main>
 
